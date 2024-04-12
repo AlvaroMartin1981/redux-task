@@ -1,18 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+/*const initialState = {
   tasks: [],
-};
+};*/
 
 const taskSlice = createSlice({
   name: 'tasks',
-  initialState,
+  initialState: [],
   reducers: {
-    addTask(state, action) {
-      state.tasks.push(action.payload);
+    addTask: (state, action) => {
+      state.push(action.payload);
     },
-    deleteTask(state, action) {
-      state.tasks = state.tasks.filter(task => task.id !== action.payload.id);
+    deleteTask: (state, action) => {    
+      return state.filter(task => task.id !== action.payload);
     },
   },
 });
